@@ -35,5 +35,5 @@ RUN curl -L ${PS_URL} -o ${PS_TEMP_FILE} \
 RUN pwsh -NoProfile -ExecutionPolicy ByPass -Command Set-PSRepository -Name PSGallery -InstallationPolicy Trusted \
     && pwsh -NoProfile -ExecutionPolicy ByPass -Command Install-Module -Name Az -Scope AllUsers
 
-# Tell docker that all future commands should run as the appuser user
+#Tell docker that all future commands should run as the appuser user
 USER ${PS_USER}
