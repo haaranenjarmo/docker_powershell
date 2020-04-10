@@ -11,9 +11,11 @@ ENV PS_URL=https://github.com/PowerShell/PowerShell/releases/download/v${PS_MAJO
 ENV PS_TEMP_FILE=/tmp/powershell.tar.gz
 ENV PS_HOME=/opt/microsoft/powershell/${PS_MAJOR}
 ENV PS_BIN=${PS_HOME}/pwsh
+ENV PS_USER=powershell
+ENV PS_GROUP=powershell
 
 # Create a group and user
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN addgroup -S ${PS_GROUP} && adduser -S ${PS_USER} -G ${PS_GROUP}
 
 RUN apk add --no-cache ca-certificates less ncurses-terminfo-base krb5-libs \
     libgcc libintl libssl1.1 libstdc++ tzdata userspace-rcu zlib icu-libs curl
@@ -34,4 +36,4 @@ RUN pwsh -NoProfile -ExecutionPolicy ByPass -Command Set-PSRepository -Name PSGa
     && pwsh -NoProfile -ExecutionPolicy ByPass -Command Install-Module -Name Az -Scope AllUsers
 
 # Tell docker that all future commands should run as the appuser user
-USER appuser
+USER ${PS_USER}
