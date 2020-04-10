@@ -1,2 +1,3 @@
 # docker_powershell
-Docker image for PowerShell
+Alpine docker image for PowerShell
+
