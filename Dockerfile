@@ -11,8 +11,8 @@ ENV PS_URL=https://github.com/PowerShell/PowerShell/releases/download/v${PS_MAJO
 ENV PS_TEMP_FILE=/tmp/powershell.tar.gz
 ENV PS_HOME=/opt/microsoft/powershell/${PS_MAJOR}
 ENV PS_BIN=${PS_HOME}/pwsh
-ENV PS_USER=powershell
-ENV PS_GROUP=powershell
+ENV PS_USER=skywalker
+ENV PS_GROUP=jedi
 
 # Create a group and user
 RUN addgroup -S ${PS_GROUP} && adduser -S ${PS_USER} -G ${PS_GROUP}
