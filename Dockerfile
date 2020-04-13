@@ -37,3 +37,5 @@ RUN pwsh -NoProfile -ExecutionPolicy ByPass -Command Set-PSRepository -Name PSGa
 
 #Tell docker that all future commands should run as the appuser user
 USER ${PS_USER}
+
+ENTRYPOINT ["/bin/sh"]
