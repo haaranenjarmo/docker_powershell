@@ -6,7 +6,7 @@ LABEL Author="Jarmo Haaranen" \
 
 ENV PS_MAJOR=7
 ENV PS_MINOR=0
-ENV PS_PATCH=0
+ENV PS_PATCH=1
 ENV PS_URL=https://github.com/PowerShell/PowerShell/releases/download/v${PS_MAJOR}.${PS_MINOR}.${PS_PATCH}/powershell-${PS_MAJOR}.${PS_MINOR}.${PS_PATCH}-linux-alpine-x64.tar.gz
 ENV PS_TEMP_FILE=/tmp/powershell.tar.gz
 ENV PS_HOME=/opt/microsoft/powershell/${PS_MAJOR}
